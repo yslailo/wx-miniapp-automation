@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-国内免费代理池 —— 完全模仿 tastin-sign 的模式。
-
 复用同一套改进版 freeproxy fork：
   · ip2region 本地离线定位（替代逐个 IP 调外部地理 API，秒级完成）
   · 边抓边验、找到可用即停（fetch_working_streaming，凑够 need 个立刻返回）
