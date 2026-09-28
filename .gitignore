@@ -16,3 +16,8 @@ venv/
 *.xdb
 proxies.json
 _freeproxy_fork/
+
+# 本地调试工具与下载物（不入库）
+WMPFDebugger/
+frida-prebuild.tar.gz
+capture.log

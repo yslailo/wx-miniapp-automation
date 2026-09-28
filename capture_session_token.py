@@ -26,6 +26,14 @@ import json
 import threading
 from pathlib import Path
 
+# Windows 控制台默认 GBK，emoji（✅/❌/⚠️）会触发 UnicodeEncodeError 导致脚本中断；
+# 把输出流的编码错误策略改为 replace，保证中文正常、emoji 降级为 ? 而不崩溃。
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(errors="replace")
+    except Exception:
+        pass
+
 try:
     import websocket
 except ImportError:
@@ -34,7 +42,7 @@ except ImportError:
 
 CDP_PORT = 62000
 TARGET_HOST = "discount.wxpapp.wechatpay.cn"
-LISTEN_SECONDS = 15
+LISTEN_SECONDS = int(os.environ.get("LISTEN_SECONDS", "15"))
 ENV_PATH = Path(__file__).resolve().parent / ".env"
 ENV_KEY = "SESSION_TOKEN"
 
