@@ -6,7 +6,7 @@
 
 ## 功能
 
-- **GitHub Actions 定时执行**：每天北京时间 09:00 自动运行，支持手动触发
+- **GitHub Actions 定时执行**：每天北京时间 06:00 自动运行，支持手动触发
 - **token 寿命实验**：日志输出 token 指纹（`[probe] token_fp=...`）与退出码，方便判断 token 存活时长
 - **直连优先 + 代理池回退**：阿里云 WAF 拦截海外 IP 时，自动切换到国内免费代理重试
   （改进版 [freeproxy fork](https://github.com/LeapYa/freeproxy)：ip2region 本地定位 + 找到可用即停）
@@ -69,7 +69,7 @@ python tools/push_token.py        # 自动读 .env，写 Secret 并触发
 
 ### 3. 让 Actions 自动跑
 
-Secrets 配好后，`每日领取提现券` 会在每天北京时间 09:00 自动运行。
+Secrets 配好后，`每日领取提现券` 会在每天北京时间 06:00 自动运行。
 
 ## Secrets
 
