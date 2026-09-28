@@ -1,0 +1,5 @@
+requests
+python-dotenv
+# 国内免费代理池（模仿 tastin-sign）——ip2region 本地定位 + 找到可用即停
+# 仅当直连被 WAF 拦截时才真正使用；不装也不影响直连运行
+git+https://github.com/LeapYa/freeproxy.git@master
